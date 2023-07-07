@@ -29,15 +29,16 @@ class CrashTransfer extends PluginBase implements Listener {
     public static $settings;
 
     public function onLoad(): void
-    {
-        $this->messages = new Config(
-            $this->getFile() . "resources/languages/" . $this->getConfig()->get("language", "en") . ".yml"
-        );
+{
+    $this->messages = new Config(
+        $this->getFile() . "resources/languages/" . $this->getConfig()->get("language", "en") . ".yml"
+    );
     }
     
     public function onEnable():void
     {
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
+    $this->getServer()->getPluginManager()->registerEvents($this, $this);
+        
         $this->saveDefaultConfig();
         $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
         self::$settings = $this->config->getAll();
