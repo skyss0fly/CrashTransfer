@@ -57,11 +57,12 @@ class CrashTransfer extends PluginBase implements Listener {
         if(sizeof($players) === 0) return;
         else {
             foreach($this->getServer()->getOnlinePlayers() as $player) {
+                $server = Server::getInstance();
+                
         $config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
         $delay = $config->get("delay");
-
-    $this->getServer()->broadcastMessage("Server Is Rebooting in ". $delay . " Seconds"); 
-}
+        $message = "Server will Reboot in ..$delay.. seconds"
+    $this->getServer()->broadcastMessage($message);
         }
         if(!self::$settings["Warning"]["Enabled"] || self::$settings["Warning"]["Delay"] <= 0){
             $this->transferPlayers($players);
