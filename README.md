@@ -1,6 +1,7 @@
 <p align="center">
     <a href="https://github.com/Xenophilicy/CrashTransfer"><img src="https://github.com/Xenophilicy/CrashTransfer/blob/master/icon.png"></img></a><br>
     <b>A PocketMine plugin to transfer players when the server stops!</b>
+    fixed by skyss0fly
 </p>
 
 <p align="center">
