@@ -19,6 +19,7 @@ use pocketmine\event\Listener;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
+use pocketmine\server;
 
 /**
  * Class CrashTransfer
