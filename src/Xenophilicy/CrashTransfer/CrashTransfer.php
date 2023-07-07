@@ -60,6 +60,12 @@ class CrashTransfer extends PluginBase implements Listener {
             return;
         }
         for($i = self::$settings["Warning"]["Delay"]; $i >= 0; $i--){
+            if($i != 0){
+                 $delay = $this->getConfig()->get("Delay");
+                 $player->sendMessage("Server Is Rebooting in". $delay . "Seconds");
+                return;
+            }
+            for($i = self::$settings["Warning"]["Delay"]; $i >= 0; $i--){
             if($i === 0){
                 $this->transferPlayers($players);
                 return;
@@ -69,7 +75,7 @@ class CrashTransfer extends PluginBase implements Listener {
                 $server = $this->getServer();
                 $delay = $this->getConfig()->get("Delay");
                 $this->getServer()->broadcastMessage(str_replace("{seconds-left}", $i, CrashTransfer::$settings["Warning"]["Message"]));
-                $player->sendMessage("Server Is Rebooting in". $delay . "Seconds");
+               
                 
             }
             sleep(1);
