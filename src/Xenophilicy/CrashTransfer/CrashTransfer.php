@@ -67,7 +67,9 @@ class CrashTransfer extends PluginBase implements Listener {
             foreach($players as $player){
                 if(!$player instanceof Player) continue;
                 $server = $this->getServer();
-                $server->broadcastMessage(str_replace("{seconds-left}", $i, CrashTransfer::$settings["Warning"]["Message"]));
+                $this->getServer()->broadcastMessage(str_replace("{seconds-left}", $i, CrashTransfer::$settings["Warning"]["Message"]));
+             
+                
             }
             sleep(1);
         }
