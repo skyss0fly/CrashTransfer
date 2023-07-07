@@ -56,6 +56,7 @@ class CrashTransfer extends PluginBase implements Listener {
         $players = $this->getServer()->getOnlinePlayers();
         if(sizeof($players) === 0) return;
         else {
+            $player = $server->getPlayer();
             $delay = $this->getConfig()->get("Delay");
                  $player->sendMessage("Server Is Rebooting in". $delay . "Seconds");
         }
